@@ -1,38 +1,64 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.js-toc {
+  width: 20vw;
+  position: fixed;
+  height: 100vh;
+  top: 10vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main > * {
+  width: 60vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 40px;
+}
+p {
+  font-size: 20px;
+  height: 90vh;
+}
+
+ol {
+  list-style: none;
+  font-size: 20px;
+}
+li > a {
+  text-decoration: none;
+  color: slategrey;
+  font-weight: bold;
+
+  transition: color .2s ease-in-out, font-size .2s ease-in-out;
+}
+
+.is-active-li > a {
+  color:blueviolet;
+  font-size: 26px;
+}
+
+.is-collapsible > li > a {
+  color: blue;
+  display: block;
+  width: 100%;
+}
+
+.is-collapsed > li > a {
+  font-size: 0;
+  transition: font-size 0.4s ease-out;
 }
